@@ -21,6 +21,8 @@
       --accent-pitch-light: #fdf0ef;
       --accent-equity: #1a6b4a;
       --accent-equity-light: #edf7f2;
+      --accent-cover: #0A2F58;
+      --accent-cover-light: #e8f3fd;
       --radius: 16px;
       --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
       --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
@@ -35,6 +37,7 @@
       --border: #2a2d38;
       --accent-pitch-light: #2a1a18;
       --accent-equity-light: #142a20;
+      --accent-cover-light: #0f1e33;
       --shadow: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
       --shadow-hover: 0 2px 8px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2);
     }
@@ -124,7 +127,7 @@
     /* CARDS */
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 960px;
       margin: 56px auto 0;
@@ -167,6 +170,7 @@
 
     .card--pitch .card-icon { background: var(--accent-pitch); }
     .card--equity .card-icon { background: var(--accent-equity); }
+    .card--cover .card-icon { background: var(--accent-cover); }
 
     .card-tag {
       font-size: 0.72rem;
@@ -187,6 +191,11 @@
       color: var(--accent-equity);
     }
 
+    .card--cover .card-tag {
+      background: var(--accent-cover-light);
+      color: var(--accent-cover);
+    }
+
     .card h2 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
@@ -202,6 +211,7 @@
     }
 
     .card--equity .tagline { color: var(--accent-equity); }
+    .card--cover .tagline { color: var(--accent-cover); }
 
     .card .desc {
       font-size: 0.95rem;
@@ -232,6 +242,7 @@
 
     .card--pitch .cta { background: var(--accent-pitch); }
     .card--equity .cta { background: var(--accent-equity); }
+    .card--cover .cta { background: var(--accent-cover); }
 
     .cta svg { width: 16px; height: 16px; fill: currentColor; }
 
@@ -297,6 +308,25 @@
       <p class="desc">Upload any Bursa Malaysia quarterly report and get an instant AI-generated financial dashboard.</p>
       <a href="https://equitylens-summary.vercel.app" class="cta">
         Open EquityLens
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- CoverLens -->
+    <div class="card card--cover">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/>
+          </svg>
+        </div>
+        <span class="card-tag">Embedded Insurance</span>
+      </div>
+      <h2>CoverLens</h2>
+      <p class="tagline">The partner case for gig platform cover.</p>
+      <p class="desc">An interactive pitch exploring how platforms and insurtechs create value together under the Gig Workers Act.</p>
+      <a href="https://coverlens.vercel.app" class="cta">
+        Open CoverLens
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
